@@ -38,11 +38,11 @@
   
   
   <entry>
-    <title>关于</title>
+    <title></title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<p>你好，我是心平气和。</p><p>这里是我的个人技术博客，用来记录编程学习、项目实践、工具链配置、工程问题复盘，以及人工智能方向的学习和尝试。我会尽量把每次学习、排查和实验过程写清楚，让文章既能帮助未来的自己，也能给遇到类似问题的人一点参考。</p><h2 id="关注方向"><a href="#关注方向" class="headerlink" title="关注方向"></a>关注方向</h2><ul><li>Web 开发与工程化</li><li>后端服务与接口设计</li><li>人工智能与 AI 应用实践</li><li>自动化工具与效率实践</li><li>项目复盘与技术笔记</li></ul><h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul><li>GitHub：<a href="https://github.com/2019717166">2019717166</a></li><li>QQ：2019717166</li><li>微信：jie-1537</li></ul>]]></content>
+    <content type="html"><![CDATA[(function () {  'use strict';  var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;  function markNavbar() {    var navbar = document.querySelector('.navbar');    if (!navbar) return;    navbar.classList.toggle('dynamic-scrolled', window.scrollY > 12);  }  function setupReveal() {    var targets = document.querySelectorAll('.index-card, .board, article, .archive, .category-list, .tag-cloud, .about-avatar, .about-name, .about-intro, .markdown-body > *');    if (reducedMotion || !('IntersectionObserver' in window)) {      targets.forEach(function (item) {        item.classList.add('dynamic-visible');      });      return;    }    var observer = new IntersectionObserver(function (entries) {      entries.forEach(function (entry) {        if (entry.isIntersecting) {          entry.target.classList.add('dynamic-visible');          observer.unobserve(entry.target);        }      });    }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });    targets.forEach(function (item, index) {      item.classList.add('dynamic-reveal');      item.style.transitionDelay = Math.min(index * 28, 260) + 'ms';      observer.observe(item);    });  }  function setupPreviewRefreshHint() {    if (!location.hostname.match(/^(localhost|127\.0\.0\.1)$/)) return;    document.documentElement.dataset.localPreview = 'true';  }  document.addEventListener('DOMContentLoaded', function () {    markNavbar();    setupReveal();    setupPreviewRefreshHint();  });  window.addEventListener('scroll', markNavbar, { passive: true });})();]]></content>
     
   </entry>
   
@@ -54,6 +54,28 @@
     <url>/</url>
     
     <content type="html"><![CDATA[]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>关于</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[<p>你好，我是心平气和。</p><p>这里是我的个人技术博客，用来记录编程学习、项目实践、工具链配置、工程问题复盘，以及人工智能方向的学习和尝试。我会尽量把每次学习、排查和实验过程写清楚，让文章既能帮助未来的自己，也能给遇到类似问题的人一点参考。</p><h2 id="关注方向"><a href="#关注方向" class="headerlink" title="关注方向"></a>关注方向</h2><ul><li>Web 开发与工程化</li><li>后端服务与接口设计</li><li>人工智能与 AI 应用实践</li><li>自动化工具与效率实践</li><li>项目复盘与技术笔记</li></ul><h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul><li>GitHub：<a href="https://github.com/2019717166">2019717166</a></li><li>QQ：2019717166</li><li>微信：jie-1537</li></ul>]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[:root {  --dynamic-accent: rgba(37, 99, 235, 0.34);  --dynamic-accent-strong: rgba(15, 118, 110, 0.42);  --dynamic-line: rgba(79, 115, 150, 0.16);}html {  scroll-behavior: smooth;}body::before {  content: "";  position: fixed;  inset: 0;  z-index: -2;  pointer-events: none;  background:    linear-gradient(115deg, rgba(37, 99, 235, 0.07), transparent 38%),    linear-gradient(245deg, rgba(15, 118, 110, 0.08), transparent 42%),    repeating-linear-gradient(90deg, transparent 0 68px, var(--dynamic-line) 69px 70px),    repeating-linear-gradient(0deg, transparent 0 68px, var(--dynamic-line) 69px 70px);  background-size: 140% 140%, 150% 150%, auto, auto;  animation: dynamic-grid 18s ease-in-out infinite alternate;}body::after {  content: "";  position: fixed;  inset: 0;  z-index: -1;  pointer-events: none;  background-image:    linear-gradient(100deg, transparent 8%, var(--dynamic-accent) 9%, transparent 12%),    linear-gradient(76deg, transparent 18%, var(--dynamic-accent-strong) 19%, transparent 22%),    linear-gradient(122deg, transparent 66%, rgba(96, 165, 250, 0.26) 67%, transparent 70%);  background-size: 920px 420px, 760px 360px, 680px 520px;  opacity: 0.42;  animation: dynamic-circuit 22s linear infinite;}.banner {  overflow: hidden;}.banner::after {  content: "";  position: absolute;  inset: 0;  pointer-events: none;  background:    linear-gradient(120deg, transparent 20%, rgba(255, 255, 255, 0.24) 42%, transparent 62%);  transform: translateX(-120%);  animation: banner-scan 8s ease-in-out infinite;}.navbar {  transition: box-shadow 220ms ease, background-color 220ms ease, transform 220ms ease;}.navbar.dynamic-scrolled {  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.18);}.board,.post,.index-card,.archive,.category-list,.tag-cloud,.about-avatar,.about-name,.about-intro,.markdown-body > * {  transition: opacity 520ms ease, transform 520ms ease, box-shadow 260ms ease;}.dynamic-reveal {  opacity: 0;  transform: translateY(18px);}.dynamic-reveal.dynamic-visible {  opacity: 1;  transform: translateY(0);}.index-card,.board {  will-change: transform;}.index-card:hover,.board:hover {  transform: translateY(-3px);  box-shadow: 0 18px 44px rgba(30, 41, 59, 0.12);}.markdown-body a {  background-image: linear-gradient(currentColor, currentColor);  background-position: 0 100%;  background-repeat: no-repeat;  background-size: 0 1px;  transition: background-size 180ms ease, color 180ms ease;}.markdown-body a:hover {  background-size: 100% 1px;}.highlight,figure.highlight {  transition: transform 220ms ease, box-shadow 220ms ease;}.highlight:hover,figure.highlight:hover {  transform: translateY(-2px);  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.14);}html[data-user-color-scheme="dark"] body::before {  --dynamic-line: rgba(148, 163, 184, 0.12);  background:    linear-gradient(115deg, rgba(96, 165, 250, 0.1), transparent 38%),    linear-gradient(245deg, rgba(45, 212, 191, 0.08), transparent 42%),    repeating-linear-gradient(90deg, transparent 0 68px, var(--dynamic-line) 69px 70px),    repeating-linear-gradient(0deg, transparent 0 68px, var(--dynamic-line) 69px 70px);}@keyframes dynamic-grid {  from {    background-position: 0% 0%, 100% 0%, 0 0, 0 0;  }  to {    background-position: 100% 100%, 0% 100%, 34px 18px, 18px 34px;  }}@keyframes dynamic-circuit {  from {    background-position: 0 0, 100px 60px, 0 120px;  }  to {    background-position: 920px 420px, -660px 360px, 680px -400px;  }}@keyframes banner-scan {  0%, 52% {    transform: translateX(-120%);  }  78%, 100% {    transform: translateX(120%);  }}@media (prefers-reduced-motion: reduce) {  *,  *::before,  *::after {    animation-duration: 1ms !important;    animation-iteration-count: 1 !important;    scroll-behavior: auto !important;    transition-duration: 1ms !important;  }  .dynamic-reveal {    opacity: 1;    transform: none;  }}]]></content>
     
   </entry>
   
