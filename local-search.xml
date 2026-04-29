@@ -4,31 +4,6 @@
   
   
   <entry>
-    <title>1</title>
-    <link href="/2026/04/29/2026-04-29-1/"/>
-    <url>/2026/04/29/2026-04-29-1/</url>
-    
-    <content type="html"><![CDATA[<p>在这里开始写正文。<br>1</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>技术笔记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>人工智能</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>从零制作并部署这个 Hexo 博客</title>
     <link href="/2026/04/29/2026-04-29-build-and-deploy-this-blog/"/>
     <url>/2026/04/29/2026-04-29-build-and-deploy-this-blog/</url>
@@ -80,9 +55,9 @@
       
       <tag>Hexo</tag>
       
-      <tag>人工智能</tag>
-      
       <tag>技术博客</tag>
+      
+      <tag>人工智能</tag>
       
       <tag>个人成长</tag>
       
