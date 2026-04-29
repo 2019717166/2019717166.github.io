@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
   <link rel="icon" href="/img/favicon.png">
   
-    <link rel="canonical" href="https://2019717166.github.io/2026/04/29/hello-world/"/>
+    <link rel="canonical" href="https://2019717166.github.io/2026/04/29/2026-04-29-build-and-deploy-this-blog/"/>
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -23,27 +23,28 @@
   <meta name="author" content="心平气和">
   <meta name="keywords" content="技术博客,编程,Web,Hexo,人工智能,AI">
   
-    <meta name="description" content="这篇文章是博客的重新开始。我会在这里记录技术学习、项目实践、工具链折腾、人工智能探索和一些值得复盘的问题。">
+    <meta name="description" content="这篇文章记录这个博客从初始化、主题切换、个性化配置、本地管理界面，到最终部署到 GitHub Pages 的完整过程。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="博客重新出发">
-<meta property="og:url" content="https://2019717166.github.io/2026/04/29/hello-world/index.html">
+<meta property="og:title" content="从零制作并部署这个 Hexo 博客">
+<meta property="og:url" content="https://2019717166.github.io/2026/04/29/2026-04-29-build-and-deploy-this-blog/index.html">
 <meta property="og:site_name" content="心平气和">
-<meta property="og:description" content="这篇文章是博客的重新开始。我会在这里记录技术学习、项目实践、工具链折腾、人工智能探索和一些值得复盘的问题。">
+<meta property="og:description" content="这篇文章记录这个博客从初始化、主题切换、个性化配置、本地管理界面，到最终部署到 GitHub Pages 的完整过程。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://2019717166.github.io/img/post-clean-ai.png">
-<meta property="article:published_time" content="2026-04-29T08:30:00.000Z">
-<meta property="article:modified_time" content="2026-04-29T09:15:47.248Z">
+<meta property="article:published_time" content="2026-04-29T09:45:00.000Z">
+<meta property="article:modified_time" content="2026-04-29T10:02:20.275Z">
 <meta property="article:author" content="心平气和">
+<meta property="article:tag" content="Fluid">
+<meta property="article:tag" content="GitHub Pages">
 <meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="个人成长">
-<meta property="article:tag" content="人工智能">
-<meta property="article:tag" content="技术博客">
+<meta property="article:tag" content="博客搭建">
+<meta property="article:tag" content="自动化">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://2019717166.github.io/img/post-clean-ai.png">
   
   
   
-  <title>博客重新出发 - 心平气和</title>
+  <title>从零制作并部署这个 Hexo 博客 - 心平气和</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -213,7 +214,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="博客重新出发"></span>
+            <span id="subtitle" data-typed-text="从零制作并部署这个 Hexo 博客"></span>
           
         </div>
 
@@ -229,7 +230,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-04-29 16:30" pubdate>
+        <time datetime="2026-04-29 17:45" pubdate>
           2026年4月29日
         </time>
       </span>
@@ -241,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          383 字
+          1.3k 字
         
       </span>
     
@@ -252,7 +253,7 @@
         
         
         
-          4 分钟
+          12 分钟
         
       </span>
     
@@ -289,25 +290,113 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">博客重新出发</h1>
+            <h1 id="seo-header">从零制作并部署这个 Hexo 博客</h1>
             
             
               <div class="markdown-body">
                 
-                <p>从默认的 Hexo 示例页开始，这个博客现在正式重新出发。</p>
-<p>我希望它不只是一个发布文章的地方，也是一份长期维护的技术记录：遇到问题时怎么拆解，做项目时怎么取舍，学习新工具和人工智能能力时哪些路径有效，踩过的坑又怎样变成下一次的经验。</p>
-<h2 id="这里会记录什么"><a href="#这里会记录什么" class="headerlink" title="这里会记录什么"></a>这里会记录什么</h2><ul>
-<li>Web 开发中的前端、后端和工程化实践。</li>
-<li>人工智能方向的学习笔记、应用实验和项目记录。</li>
-<li>日常学习里值得沉淀的概念、工具和配置。</li>
-<li>项目开发过程中的问题排查、复盘和改进。</li>
-<li>让效率变高的小脚本、小技巧和工作流。</li>
+                <p>这篇文章记录这个博客从默认 Hexo 站点，逐步变成现在这个个人技术博客的过程。它不只是一次换主题，也包括站点定位、页面优化、本地写作管理和部署流程的整理。</p>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>一开始的目标很明确：把默认的 Hexo 博客优化成一个适合长期维护的技术博客。</p>
+<p>我希望它具备这些能力：</p>
+<ul>
+<li>适合写技术文章，阅读体验清爽。</li>
+<li>支持分类、标签、归档和本地搜索。</li>
+<li>有个人主页信息，能展示博客方向和联系方式。</li>
+<li>首页不只是文章列表，也能体现人工智能、Web 和工程实践方向。</li>
+<li>能在本地通过一个简单界面写文章、编辑配置，并自动生成预览。</li>
+<li>最终部署到 GitHub Pages，访问成本低，维护简单。</li>
 </ul>
-<h2 id="当前技术栈"><a href="#当前技术栈" class="headerlink" title="当前技术栈"></a>当前技术栈</h2><p>这个站点使用 Hexo 生成静态页面，部署到 GitHub Pages。主题切换为 Fluid，目标是保持页面清爽、阅读舒服，同时补齐归档、分类、标签、搜索和代码阅读体验。后续也会把人工智能相关的学习、工具和项目实践放进来。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo clean<br>hexo generate<br>hexo server<br></code></pre></td></tr></table></figure>
+<h2 id="初始化-Hexo-项目"><a href="#初始化-Hexo-项目" class="headerlink" title="初始化 Hexo 项目"></a>初始化 Hexo 项目</h2><p>博客使用 Hexo 作为静态站点生成器。Hexo 的优点是结构简单，文章用 Markdown 编写，生成结果就是一组静态文件，适合部署到 GitHub Pages。</p>
+<p>常用命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo clean<br>hexo generate<br>hexo server<br>hexo deploy<br></code></pre></td></tr></table></figure>
 
-<h2 id="后续计划"><a href="#后续计划" class="headerlink" title="后续计划"></a>后续计划</h2><p>接下来我会逐步补充更具体的文章分类，把学习记录和项目实践分开整理。每一篇文章都尽量保持一个明确主题：解释一个问题，沉淀一个方案，或者复盘一次实践。</p>
-<p>如果未来回头看这些内容，希望能看到的不只是答案，还有当时思考问题的路径。</p>
+<p>其中：</p>
+<ul>
+<li><code>hexo clean</code> 清理旧的生成结果。</li>
+<li><code>hexo generate</code> 生成静态页面到 <code>public/</code>。</li>
+<li><code>hexo server</code> 启动本地预览服务。</li>
+<li><code>hexo deploy</code> 把生成结果部署到远程仓库。</li>
+</ul>
+<h2 id="切换到-Fluid-主题"><a href="#切换到-Fluid-主题" class="headerlink" title="切换到 Fluid 主题"></a>切换到 Fluid 主题</h2><p>默认的 Landscape 主题比较基础，所以我把主题切换为 Fluid。Fluid 更适合中文技术博客，支持暗色模式、本地搜索、代码块增强、文章目录、关于页等功能。</p>
+<p>根配置 <code>_config.yml</code> 中主要修改了这些内容：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">title:</span> <span class="hljs-string">心平气和</span><br><span class="hljs-attr">author:</span> <span class="hljs-string">心平气和</span><br><span class="hljs-attr">language:</span> <span class="hljs-string">zh-CN</span><br><span class="hljs-attr">timezone:</span> <span class="hljs-string">Asia/Hong_Kong</span><br><span class="hljs-attr">url:</span> <span class="hljs-string">https://2019717166.github.io</span><br><span class="hljs-attr">theme:</span> <span class="hljs-string">fluid</span><br></code></pre></td></tr></table></figure>
+
+<p>另外新增 <code>_config.fluid.yml</code>，用于保存主题配置。这样做的好处是主题本体仍然保留在依赖包里，后续升级主题时不容易和自己的配置混在一起。</p>
+<h2 id="配置站点信息"><a href="#配置站点信息" class="headerlink" title="配置站点信息"></a>配置站点信息</h2><p>博客的站点信息被调整为个人技术博客定位：</p>
+<ul>
+<li>名称：心平气和</li>
+<li>GitHub：<a target="_blank" rel="noopener" href="https://github.com/2019717166">2019717166</a></li>
+<li>QQ：2019717166</li>
+<li>微信：jie-1537</li>
+<li>方向：人工智能、Web 开发、工程实践、工具链、项目复盘</li>
+</ul>
+<p>关于页放在：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">source/about/index.md<br></code></pre></td></tr></table></figure>
+
+<p>文章分类页和标签页分别放在：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs text">source/categories/index.md<br>source/tags/index.md<br></code></pre></td></tr></table></figure>
+
+<h2 id="优化首页"><a href="#优化首页" class="headerlink" title="优化首页"></a>优化首页</h2><p>Fluid 默认首页主要是 Banner 加文章列表，比较简洁。为了让首页更像一个个人技术站，我加了一层自定义的前端增强。</p>
+<p>主要文件是：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs text">source/css/site-dynamic.css<br>source/js/site-dynamic.js<br></code></pre></td></tr></table></figure>
+
+<p>这些文件做了几件事：</p>
+<ul>
+<li>给全站添加动态网格和流动线条背景。</li>
+<li>给卡片、文章、代码块添加轻量动效。</li>
+<li>首页中间只保留文章列表。</li>
+<li>首页左右两侧放悬浮功能卡片，用来展示关注方向、近期计划和快捷入口。</li>
+<li>宽屏时左右栏悬浮，窄屏时自动变成普通布局，避免遮挡正文。</li>
+</ul>
+<p>为了避免这些 CSS 和 JS 被本地搜索搜出来，搜索索引范围被限制为文章：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">search:</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">local-search.xml</span><br>  <span class="hljs-attr">field:</span> <span class="hljs-string">post</span><br>  <span class="hljs-attr">content:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="添加本地管理界面"><a href="#添加本地管理界面" class="headerlink" title="添加本地管理界面"></a>添加本地管理界面</h2><p>为了让写文章和改配置更方便，我添加了一个只在本机使用的管理界面：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">tools/admin-server.js<br></code></pre></td></tr></table></figure>
+
+<p>它只监听 <code>127.0.0.1</code>，不会被部署到 GitHub Pages。启动时需要访问口令：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-variable">$env:BLOG_ADMIN_TOKEN</span>=<span class="hljs-string">&quot;换成你自己的访问口令&quot;</span><br>C:\Users\cjj13\.cache\codex<span class="hljs-literal">-runtimes</span>\codex<span class="hljs-literal">-primary-runtime</span>\dependencies\node\bin\node.exe tools\admin<span class="hljs-literal">-server</span>.js<br></code></pre></td></tr></table></figure>
+
+<p>打开终端输出的地址后，就可以在浏览器里完成这些操作：</p>
+<ul>
+<li>新建文章。</li>
+<li>编辑已有文章。</li>
+<li>修改关于页。</li>
+<li>修改 Hexo 配置。</li>
+<li>保存后自动执行 <code>hexo generate</code>。</li>
+<li>右侧预览自动刷新。</li>
+</ul>
+<p>管理界面的使用说明也单独记录在：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">BLOG_ADMIN.md<br></code></pre></td></tr></table></figure>
+
+<h2 id="编写文章"><a href="#编写文章" class="headerlink" title="编写文章"></a>编写文章</h2><p>每篇文章放在 <code>source/_posts/</code> 目录下，文件头部使用 front-matter 描述标题、时间、分类、标签、摘要和封面。</p>
+<p>例如：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">从零制作并部署这个</span> <span class="hljs-string">Hexo</span> <span class="hljs-string">博客</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2026-04-29 17:45:00</span><br><span class="hljs-attr">categories:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">技术笔记</span><br><span class="hljs-attr">tags:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">Hexo</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">Fluid</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">GitHub</span> <span class="hljs-string">Pages</span><br><span class="hljs-attr">excerpt:</span> <span class="hljs-string">记录博客从制作到部署的完整过程。</span><br><span class="hljs-attr">index_img:</span> <span class="hljs-string">/img/post-clean-ai.png</span><br><span class="hljs-attr">banner_img:</span> <span class="hljs-string">/img/bg-clean-ai.png</span><br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure>
+
+<p>写完文章后运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo clean<br>hexo generate<br></code></pre></td></tr></table></figure>
+
+<p>生成成功后，文章会出现在首页、归档、分类、标签和搜索索引里。</p>
+<h2 id="部署到-GitHub-Pages"><a href="#部署到-GitHub-Pages" class="headerlink" title="部署到 GitHub Pages"></a>部署到 GitHub Pages</h2><p>部署使用 <code>hexo-deployer-git</code>，配置在 <code>_config.yml</code> 里：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repository:</span> <span class="hljs-string">https://github.com/2019717166/2019717166.github.io.git</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure>
+
+<p>确认本地预览没问题后，执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo deploy<br></code></pre></td></tr></table></figure>
+
+<p>Hexo 会把 <code>public/</code> 中的静态文件推送到 GitHub Pages 仓库。等待 GitHub Pages 更新后，就可以通过下面的地址访问：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">https://2019717166.github.io<br></code></pre></td></tr></table></figure>
+
+<h2 id="这次搭建的收获"><a href="#这次搭建的收获" class="headerlink" title="这次搭建的收获"></a>这次搭建的收获</h2><p>这次搭建不只是把主题换好，更重要的是把后续维护流程也整理清楚了。</p>
+<p>现在的博客已经具备了一个长期技术记录站需要的基础能力：</p>
+<ul>
+<li>写作入口明确。</li>
+<li>页面结构清晰。</li>
+<li>搜索不会被样式和脚本污染。</li>
+<li>首页能体现技术方向。</li>
+<li>本地管理界面能降低写文章和改配置的成本。</li>
+<li>部署流程保持简单，仍然适合 GitHub Pages。</li>
+</ul>
+<p>后续只需要持续补充文章内容，把学习人工智能、Web 开发和工程实践的过程记录下来，这个博客就会慢慢变成一份真正有价值的个人知识库。</p>
 
                 
               </div>
@@ -326,7 +415,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E9%9A%8F%E7%AC%94/" class="category-chain-item">随笔</a>
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" class="category-chain-item">技术笔记</a>
   
   
 
@@ -343,11 +432,13 @@
       
         <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
       
-        <a href="/tags/%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2/" class="print-no-link">#技术博客</a>
+        <a href="/tags/Fluid/" class="print-no-link">#Fluid</a>
       
-        <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="print-no-link">#人工智能</a>
+        <a href="/tags/GitHub-Pages/" class="print-no-link">#GitHub Pages</a>
       
-        <a href="/tags/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/" class="print-no-link">#个人成长</a>
+        <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="print-no-link">#博客搭建</a>
+      
+        <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/" class="print-no-link">#自动化</a>
       
     </div>
   
@@ -359,8 +450,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>博客重新出发</div>
-      <div>https://2019717166.github.io/2026/04/29/hello-world/</div>
+      <div>从零制作并部署这个 Hexo 博客</div>
+      <div>https://2019717166.github.io/2026/04/29/2026-04-29-build-and-deploy-this-blog/</div>
     </div>
     <div class="license-meta">
       
@@ -404,15 +495,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/04/29/2026-04-29-build-and-deploy-this-blog/" title="从零制作并部署这个 Hexo 博客">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">从零制作并部署这个 Hexo 博客</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2026/04/29/hello-world/" title="博客重新出发">
+                        <span class="hidden-mobile">博客重新出发</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
