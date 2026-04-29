@@ -120,20 +120,59 @@ figure.highlight:hover {
 
 .home-shell {
   display: grid;
-  grid-template-columns: minmax(170px, 0.7fr) minmax(0, 2fr) minmax(170px, 0.75fr);
-  gap: 1rem;
+  grid-template-columns: 260px minmax(560px, 860px) 260px;
+  gap: clamp(1.25rem, 3.2vw, 3rem);
   align-items: start;
+  width: min(1760px, calc(100vw - 48px));
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.home-wide-sidebars #board {
+  margin-top: -3rem;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.home-wide-sidebars #board:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.home-wide-sidebars #board > .container {
+  max-width: none;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.home-wide-sidebars #board > .container > .row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.home-wide-sidebars #board .col-12.col-md-10.m-auto {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .home-sidebar {
   position: sticky;
-  top: 86px;
+  top: 88px;
   display: grid;
   gap: 0.9rem;
+  align-self: start;
 }
 
 .home-main-feed {
   min-width: 0;
+  padding: clamp(1.25rem, 2.2vw, 2.1rem);
+  border-radius: 8px;
+  background: var(--board-bg-color);
+  box-shadow: 0 16px 42px rgba(30, 41, 59, 0.16);
 }
 
 .home-side-card {
@@ -142,6 +181,14 @@ figure.highlight:hover {
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.82);
   box-shadow: 0 12px 30px rgba(30, 41, 59, 0.07);
+}
+
+.home-sidebar-left {
+  justify-self: end;
+}
+
+.home-sidebar-right {
+  justify-self: start;
 }
 
 .home-side-card h2,
@@ -267,6 +314,11 @@ html[data-user-color-scheme="dark"] .home-side-card {
     radial-gradient(circle at top right, rgba(96, 165, 250, 0.16), transparent 34%);
 }
 
+html[data-user-color-scheme="dark"] .home-main-feed {
+  background: var(--board-bg-color);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.28);
+}
+
 html[data-user-color-scheme="dark"] .home-side-card h2,
 html[data-user-color-scheme="dark"] .home-side-card h3,
 html[data-user-color-scheme="dark"] .home-feed-title span {
@@ -327,12 +379,32 @@ html[data-user-color-scheme="dark"] body::before {
 }
 
 @media (max-width: 991px) {
+  .home-wide-sidebars #board {
+    margin-top: -2rem;
+  }
+
   .home-shell {
     grid-template-columns: 1fr;
+    width: 100%;
+    margin-left: 0;
+    transform: none;
   }
 
   .home-sidebar {
     position: static;
+    justify-self: stretch;
+  }
+
+  .home-sidebar-left {
+    order: 1;
+  }
+
+  .home-main-feed {
+    order: 2;
+  }
+
+  .home-sidebar-right {
+    order: 3;
   }
 }
 

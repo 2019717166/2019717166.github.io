@@ -54,6 +54,7 @@
     if (location.pathname !== '/' && location.pathname !== '/index.html') return;
     var boardInner = document.querySelector('#board .col-12.col-md-10.m-auto');
     if (!boardInner || document.querySelector('.home-shell')) return;
+    document.documentElement.classList.add('home-wide-sidebars');
 
     var cards = Array.prototype.slice.call(boardInner.querySelectorAll(':scope > .index-card'));
     if (!cards.length) return;
