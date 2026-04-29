@@ -3,6 +3,10 @@
 
   var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  function text(value) {
+    return value;
+  }
+
   function markNavbar() {
     var navbar = document.querySelector('.navbar');
     if (!navbar) return;
@@ -10,7 +14,7 @@
   }
 
   function setupReveal() {
-    var targets = document.querySelectorAll('.index-card, .board, article, .archive, .category-list, .tag-cloud, .about-avatar, .about-name, .about-intro, .markdown-body > *');
+    var targets = document.querySelectorAll('.home-side-card, .index-card, .board, article, .archive, .category-list, .tag-cloud, .about-avatar, .about-name, .about-intro, .markdown-body > *');
     if (reducedMotion || !('IntersectionObserver' in window)) {
       targets.forEach(function (item) {
         item.classList.add('dynamic-visible');
@@ -29,7 +33,7 @@
 
     targets.forEach(function (item, index) {
       item.classList.add('dynamic-reveal');
-      item.style.transitionDelay = Math.min(index * 28, 260) + 'ms';
+      item.style.transitionDelay = Math.min(index * 28, 220) + 'ms';
       observer.observe(item);
     });
   }
@@ -39,68 +43,72 @@
     document.documentElement.dataset.localPreview = 'true';
   }
 
-  function addHomeDashboard() {
+  function createCard(className, html) {
+    var card = document.createElement('section');
+    card.className = className;
+    card.innerHTML = html;
+    return card;
+  }
+
+  function addHomeSidebars() {
     if (location.pathname !== '/' && location.pathname !== '/index.html') return;
     var boardInner = document.querySelector('#board .col-12.col-md-10.m-auto');
-    if (!boardInner || document.querySelector('.home-dashboard')) return;
+    if (!boardInner || document.querySelector('.home-shell')) return;
 
-    var dashboard = document.createElement('section');
-    dashboard.className = 'home-dashboard';
-    dashboard.innerHTML = [
-      '<div class="home-hero-panel">',
-      '  <div>',
-      '    <p class="home-kicker">AI / Web / Engineering</p>',
-      '    <h1>把学习、实验和项目复盘沉淀成可复用的经验</h1>',
-      '    <p class="home-summary">这里会持续整理人工智能应用、Web 开发、工程化工具和项目实践。每篇文章都尽量回答一个具体问题，留下清晰的思考路径。</p>',
-      '  </div>',
-      '  <div class="home-signal" aria-hidden="true">',
-      '    <span></span><span></span><span></span><span></span>',
-      '  </div>',
-      '</div>',
-      '<div class="home-focus-grid">',
-      '  <a class="home-focus-card" href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">',
-      '    <span class="home-card-index">01</span>',
-      '    <h2>人工智能</h2>',
-      '    <p>记录 AI 工具、模型能力、应用实验和真实项目里的使用方式。</p>',
-      '  </a>',
-      '  <a class="home-focus-card" href="/categories/">',
-      '    <span class="home-card-index">02</span>',
-      '    <h2>工程实践</h2>',
-      '    <p>把开发过程中的设计、取舍、排错和部署经验整理成可回看的笔记。</p>',
-      '  </a>',
-      '  <a class="home-focus-card" href="/archives/">',
-      '    <span class="home-card-index">03</span>',
-      '    <h2>持续复盘</h2>',
-      '    <p>按时间线沉淀学习轨迹，让每次实践都能成为下一次的起点。</p>',
-      '  </a>',
-      '</div>',
-      '<div class="home-workbench">',
-      '  <div class="home-workbench-main">',
-      '    <p class="home-section-label">近期会补充</p>',
-      '    <ul>',
-      '      <li><span>AI 应用开发</span><em>提示词、工作流、工具调用、项目落地</em></li>',
-      '      <li><span>Hexo 博客建设</span><em>主题配置、自动化发布、本地编辑后台</em></li>',
-      '      <li><span>Web 工程化</span><em>调试记录、构建优化、部署经验</em></li>',
-      '    </ul>',
-      '  </div>',
-      '  <div class="home-actions">',
-      '    <a href="/archives/">浏览归档</a>',
-      '    <a href="/tags/">查看标签</a>',
-      '    <a href="/about/">联系我</a>',
-      '  </div>',
-      '</div>',
-      '<div class="home-latest-title">',
-      '  <span>最新文章</span>',
-      '  <small>Latest Notes</small>',
-      '</div>'
-    ].join('');
+    var cards = Array.prototype.slice.call(boardInner.querySelectorAll(':scope > .index-card'));
+    if (!cards.length) return;
 
-    boardInner.insertBefore(dashboard, boardInner.firstChild);
+    var shell = document.createElement('div');
+    shell.className = 'home-shell';
+
+    var left = document.createElement('aside');
+    left.className = 'home-sidebar home-sidebar-left';
+    left.appendChild(createCard('home-side-card home-profile-card', [
+      '<p class="home-kicker">AI / Web</p>',
+      '<h2>' + text('\u5fc3\u5e73\u6c14\u548c') + '</h2>',
+      '<p>' + text('\u8bb0\u5f55\u4eba\u5de5\u667a\u80fd\u3001Web \u5f00\u53d1\u548c\u5de5\u7a0b\u5b9e\u8df5\uff0c\u628a\u6bcf\u6b21\u5b66\u4e60\u548c\u5b9e\u9a8c\u90fd\u7559\u6210\u53ef\u590d\u7528\u7684\u7ecf\u9a8c\u3002') + '</p>',
+      '<div class="home-signal-mini" aria-hidden="true"><span></span><span></span><span></span></div>'
+    ].join('')));
+    left.appendChild(createCard('home-side-card', [
+      '<h3>' + text('\u5173\u6ce8\u65b9\u5411') + '</h3>',
+      '<a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">' + text('\u4eba\u5de5\u667a\u80fd') + '</a>',
+      '<a href="/categories/">' + text('\u5de5\u7a0b\u5b9e\u8df5') + '</a>',
+      '<a href="/archives/">' + text('\u6301\u7eed\u590d\u76d8') + '</a>'
+    ].join('')));
+
+    var center = document.createElement('section');
+    center.className = 'home-main-feed';
+    center.innerHTML = '<div class="home-feed-title"><span>' + text('\u6700\u65b0\u6587\u7ae0') + '</span><small>Latest Notes</small></div>';
+    cards.forEach(function (card) {
+      center.appendChild(card);
+    });
+
+    var right = document.createElement('aside');
+    right.className = 'home-sidebar home-sidebar-right';
+    right.appendChild(createCard('home-side-card', [
+      '<h3>' + text('\u8fd1\u671f\u4f1a\u8865\u5145') + '</h3>',
+      '<ul class="home-topic-list">',
+      '<li><span>AI</span>' + text('\u5e94\u7528\u5f00\u53d1\u548c\u5de5\u5177\u8c03\u7528') + '</li>',
+      '<li><span>Hexo</span>' + text('\u535a\u5ba2\u914d\u7f6e\u4e0e\u81ea\u52a8\u5316') + '</li>',
+      '<li><span>Web</span>' + text('\u8c03\u8bd5\u3001\u6784\u5efa\u548c\u90e8\u7f72') + '</li>',
+      '</ul>'
+    ].join('')));
+    right.appendChild(createCard('home-side-card home-quick-card', [
+      '<h3>' + text('\u5feb\u6377\u5165\u53e3') + '</h3>',
+      '<a href="/archives/">' + text('\u5f52\u6863') + '</a>',
+      '<a href="/tags/">' + text('\u6807\u7b7e') + '</a>',
+      '<a href="/about/">' + text('\u5173\u4e8e') + '</a>'
+    ].join('')));
+
+    shell.appendChild(left);
+    shell.appendChild(center);
+    shell.appendChild(right);
+    boardInner.appendChild(shell);
   }
 
   document.addEventListener('DOMContentLoaded', function () {
     markNavbar();
-    addHomeDashboard();
+    addHomeSidebars();
     setupReveal();
     setupPreviewRefreshHint();
   });
