@@ -58,21 +58,16 @@
     if (!main || !left || !right) return;
 
     var viewport = window.innerWidth || document.documentElement.clientWidth;
-    var gap = 18;
-    var leftWidth = left.offsetWidth;
-    var rightWidth = right.offsetWidth;
-    var rect = main.getBoundingClientRect();
-    var hasRoom = rect.left >= leftWidth + gap + 14 && viewport - rect.right >= rightWidth + gap + 14;
-
-    document.documentElement.classList.toggle('home-floating-active', hasRoom);
-    if (!hasRoom) {
+    var useFloating = viewport >= 1200;
+    document.documentElement.classList.toggle('home-floating-active', useFloating);
+    if (!useFloating) {
       left.style.left = '';
       right.style.right = '';
       return;
     }
 
-    left.style.left = Math.max(14, rect.left - leftWidth - gap) + 'px';
-    right.style.right = Math.max(14, viewport - rect.right - rightWidth - gap) + 'px';
+    left.style.left = '24px';
+    right.style.right = '24px';
   }
 
   function addHomeSidebars() {
