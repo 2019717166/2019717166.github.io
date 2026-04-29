@@ -119,11 +119,8 @@ figure.highlight:hover {
 }
 
 .home-shell {
-  display: grid;
-  grid-template-columns: 260px minmax(560px, 860px) 260px;
-  gap: clamp(1.25rem, 3.2vw, 3rem);
-  align-items: start;
-  width: min(1760px, calc(100vw - 48px));
+  display: block;
+  width: min(920px, calc(100vw - 48px));
   margin-left: 50%;
   transform: translateX(-50%);
 }
@@ -160,11 +157,15 @@ figure.highlight:hover {
 }
 
 .home-sidebar {
-  position: sticky;
-  top: 88px;
+  position: fixed;
+  top: 50%;
   display: grid;
   gap: 0.9rem;
-  align-self: start;
+  width: clamp(190px, 14vw, 250px);
+  max-height: calc(100vh - 110px);
+  overflow-y: auto;
+  z-index: 8;
+  scrollbar-width: thin;
 }
 
 .home-main-feed {
@@ -184,11 +185,18 @@ figure.highlight:hover {
 }
 
 .home-sidebar-left {
-  justify-self: end;
+  left: clamp(18px, 4vw, 72px);
+  transform: translateY(-50%);
 }
 
 .home-sidebar-right {
-  justify-self: start;
+  right: clamp(18px, 4vw, 72px);
+  transform: translateY(-50%);
+}
+
+.home-sidebar-left:hover,
+.home-sidebar-right:hover {
+  transform: translateY(-50%) translateY(-2px);
 }
 
 .home-side-card h2,
@@ -384,7 +392,6 @@ html[data-user-color-scheme="dark"] body::before {
   }
 
   .home-shell {
-    grid-template-columns: 1fr;
     width: 100%;
     margin-left: 0;
     transform: none;
@@ -392,11 +399,15 @@ html[data-user-color-scheme="dark"] body::before {
 
   .home-sidebar {
     position: static;
-    justify-self: stretch;
+    width: auto;
+    max-height: none;
+    overflow: visible;
+    transform: none;
   }
 
   .home-sidebar-left {
     order: 1;
+    transform: none;
   }
 
   .home-main-feed {
@@ -405,6 +416,12 @@ html[data-user-color-scheme="dark"] body::before {
 
   .home-sidebar-right {
     order: 3;
+    transform: none;
+  }
+
+  .home-sidebar-left:hover,
+  .home-sidebar-right:hover {
+    transform: none;
   }
 }
 
