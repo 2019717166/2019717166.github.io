@@ -50,6 +50,31 @@
     return card;
   }
 
+  function positionFloatingSidebars() {
+    if (!document.documentElement.classList.contains('home-wide-sidebars')) return;
+    var main = document.querySelector('.home-main-feed');
+    var left = document.querySelector('.home-sidebar-left');
+    var right = document.querySelector('.home-sidebar-right');
+    if (!main || !left || !right) return;
+
+    var viewport = window.innerWidth || document.documentElement.clientWidth;
+    var gap = 18;
+    var leftWidth = left.offsetWidth;
+    var rightWidth = right.offsetWidth;
+    var rect = main.getBoundingClientRect();
+    var hasRoom = rect.left >= leftWidth + gap + 14 && viewport - rect.right >= rightWidth + gap + 14;
+
+    document.documentElement.classList.toggle('home-floating-active', hasRoom);
+    if (!hasRoom) {
+      left.style.left = '';
+      right.style.right = '';
+      return;
+    }
+
+    left.style.left = Math.max(14, rect.left - leftWidth - gap) + 'px';
+    right.style.right = Math.max(14, viewport - rect.right - rightWidth - gap) + 'px';
+  }
+
   function addHomeSidebars() {
     if (location.pathname !== '/' && location.pathname !== '/index.html') return;
     var boardInner = document.querySelector('#board .col-12.col-md-10.m-auto');
@@ -65,7 +90,6 @@
     var left = document.createElement('aside');
     left.className = 'home-sidebar home-sidebar-left';
     left.appendChild(createCard('home-side-card home-profile-card', [
-      '<p class="home-kicker">AI / Web</p>',
       '<h2>' + text('\u5fc3\u5e73\u6c14\u548c') + '</h2>',
       '<p>' + text('\u8bb0\u5f55\u4eba\u5de5\u667a\u80fd\u3001Web \u5f00\u53d1\u548c\u5de5\u7a0b\u5b9e\u8df5\uff0c\u628a\u6bcf\u6b21\u5b66\u4e60\u548c\u5b9e\u9a8c\u90fd\u7559\u6210\u53ef\u590d\u7528\u7684\u7ecf\u9a8c\u3002') + '</p>',
       '<div class="home-signal-mini" aria-hidden="true"><span></span><span></span><span></span></div>'
@@ -105,6 +129,7 @@
     shell.appendChild(center);
     shell.appendChild(right);
     boardInner.appendChild(shell);
+    positionFloatingSidebars();
   }
 
   document.addEventListener('DOMContentLoaded', function () {
@@ -112,7 +137,10 @@
     addHomeSidebars();
     setupReveal();
     setupPreviewRefreshHint();
+    positionFloatingSidebars();
   });
 
   window.addEventListener('scroll', markNavbar, { passive: true });
+  window.addEventListener('resize', positionFloatingSidebars);
+  window.addEventListener('load', positionFloatingSidebars);
 })();

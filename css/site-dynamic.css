@@ -2,6 +2,9 @@
   --dynamic-accent: rgba(37, 99, 235, 0.34);
   --dynamic-accent-strong: rgba(15, 118, 110, 0.42);
   --dynamic-line: rgba(79, 115, 150, 0.16);
+  --home-feed-width: min(820px, calc(100vw - 48px));
+  --home-sidebar-width: clamp(170px, 14vw, 220px);
+  --home-sidebar-gap: 18px;
 }
 
 html {
@@ -120,9 +123,9 @@ figure.highlight:hover {
 
 .home-shell {
   display: block;
-  width: min(920px, calc(100vw - 48px));
-  margin-left: 50%;
-  transform: translateX(-50%);
+  width: var(--home-feed-width);
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .home-wide-sidebars #board {
@@ -157,15 +160,19 @@ figure.highlight:hover {
 }
 
 .home-sidebar {
-  position: fixed;
+  position: static;
   top: 50%;
   display: grid;
   gap: 0.9rem;
-  width: clamp(190px, 14vw, 250px);
+  width: var(--home-sidebar-width);
   max-height: calc(100vh - 110px);
   overflow-y: auto;
   z-index: 8;
   scrollbar-width: thin;
+}
+
+.home-floating-active .home-sidebar {
+  position: fixed;
 }
 
 .home-main-feed {
@@ -185,18 +192,46 @@ figure.highlight:hover {
 }
 
 .home-sidebar-left {
-  left: clamp(18px, 4vw, 72px);
   transform: translateY(-50%);
 }
 
 .home-sidebar-right {
-  right: clamp(18px, 4vw, 72px);
   transform: translateY(-50%);
+}
+
+.home-wide-sidebars:not(.home-floating-active) .home-sidebar {
+  width: auto;
+  max-height: none;
+  overflow: visible;
+  transform: none;
+}
+
+.home-wide-sidebars:not(.home-floating-active) .home-shell {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.home-wide-sidebars:not(.home-floating-active) .home-sidebar-left {
+  order: 1;
+}
+
+.home-wide-sidebars:not(.home-floating-active) .home-main-feed {
+  order: 2;
+}
+
+.home-wide-sidebars:not(.home-floating-active) .home-sidebar-right {
+  order: 3;
 }
 
 .home-sidebar-left:hover,
 .home-sidebar-right:hover {
   transform: translateY(-50%) translateY(-2px);
+}
+
+.home-wide-sidebars:not(.home-floating-active) .home-sidebar-left:hover,
+.home-wide-sidebars:not(.home-floating-active) .home-sidebar-right:hover {
+  transform: none;
 }
 
 .home-side-card h2,
@@ -386,15 +421,17 @@ html[data-user-color-scheme="dark"] body::before {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1199px) {
   .home-wide-sidebars #board {
     margin-top: -2rem;
+    padding: 3rem 0;
+    background: var(--board-bg-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 12px 15px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   }
 
   .home-shell {
     width: 100%;
-    margin-left: 0;
-    transform: none;
   }
 
   .home-sidebar {
